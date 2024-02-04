@@ -8,6 +8,8 @@ export const metadata: Metadata = {
 	title: 'Select your vehicle'
 };
 
+export const runtime = 'edge'
+
 export default async function Page() {
 	const user = await auth();
 	const vehicleList = await fetchVehicles(user?.user?.name!);

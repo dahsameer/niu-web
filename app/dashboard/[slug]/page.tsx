@@ -8,6 +8,8 @@ export const metadata: Metadata = {
 	title: 'Niu Dashboard'
 };
 
+export const runtime = 'edge'
+
 export default async function Page({ params }: { params: { slug: string } }) {
 	const session = await auth();
 	const rides = await fetchRides(session!.user!.name!, params.slug);

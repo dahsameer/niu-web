@@ -5,6 +5,7 @@ import { auth } from "../../../../auth";
 export const metadata: Metadata = {
 	title: 'Niu Battery Details'
 };
+export const runtime = 'edge'
 
 export default async function Page({ params }: { params: { slug: string } }) {
 	const session = await auth();
