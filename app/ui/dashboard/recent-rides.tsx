@@ -15,9 +15,6 @@ export default async function LatestInvoices({
 				<h2 className={`mb-4 flex flex-col text-lg md:text-lg`}>
 					Recent Rides
 				</h2>
-				<p className='flex pt-3 flex-row justify-between items-center'>
-					<Link className='text-sm text-gray-500' key={"ride-details"} href={"/dashboard/rides"} >More details <ChevronDoubleRightIcon className='h-[18px] w-[18px]' /> </Link>
-				</p>
 			</div>
 			<div className="flex grow flex-col justify-between rounded-xl bg-gray-50 p-2">
 				<div className="bg-white px-1">

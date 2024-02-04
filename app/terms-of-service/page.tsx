@@ -11,7 +11,7 @@ const tos = [
 	},
 	{
 		title: "Use at Your Own Risk",
-		description: "Users of [Your App's Name] should understand that using this application might violate Niu's terms of service, which could result in penalties such as account suspension or banning from Niu. We hold no responsibility for any such actions taken against users of Niu Web Unofficial."
+		description: "Users of Niu Web Unofficial should understand that using this application might violate Niu's terms of service, which could result in penalties such as account suspension or banning from Niu. We hold no responsibility for any such actions taken against users of Niu Web Unofficial."
 	},
 	{
 		title: "No Warranty",

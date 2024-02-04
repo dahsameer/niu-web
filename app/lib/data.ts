@@ -1,5 +1,6 @@
 import {
 	BatteryDetails,
+	BatteryHealthDetails,
 	NiuResponse,
 	RideDetail,
 	TrackMileage,
@@ -35,11 +36,24 @@ export async function fetchVehicles(token: string): Promise<VehicleDetail[]> {
 	}
 }
 
-export async function fetchBatteryHealth(token: string, sn_id: string): Promise<BatteryDetails> {
+export async function fetchBatteryHealth(token: string, sn_id: string): Promise<BatteryHealthDetails> {
 	// Add noStore() here to prevent the response from being cached.
 	try {
 		const date_epoch = Math.floor(Date.now() / 1000);
 		const data = await get(`v3/motor_data/battery_info/health?sn=${sn_id}&_=${date_epoch}`, token);
+		const ride_details = data as NiuResponse<BatteryHealthDetails>;
+		return ride_details.data;
+	} catch (error) {
+		console.error('API Error:', error);
+		throw new Error('Failed to fetch battery data.');
+	}
+}
+
+export async function fetchBatteryDetails(token: string, sn_id: string): Promise<BatteryDetails> {
+	// Add noStore() here to prevent the response from being cached.
+	try {
+		const date_epoch = Math.floor(Date.now() / 1000);
+		const data = await get(`v3/motor_data/battery_info?sn=${sn_id}&_=${date_epoch}`, token);
 		const ride_details = data as NiuResponse<BatteryDetails>;
 		return ride_details.data;
 	} catch (error) {

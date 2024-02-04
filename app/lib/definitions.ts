@@ -105,15 +105,15 @@ export type VehicleDetail = {
 	expire_time: number
 }
 
-export type BatteryDetails = {
-	batteries: Batteries
+export type BatteryHealthDetails = {
+	batteries: HealthBatteries
 	isDoubleBattery: boolean
 }
-export interface Batteries {
-  compartmentA: Battery
-  compartmentB: Battery
+export interface HealthBatteries {
+  compartmentA: HealthBattery
+  compartmentB: HealthBattery
 }
-export interface Battery {
+export interface HealthBattery {
   bmsId: string
   isConnected: boolean
   gradeBattery: string
@@ -126,4 +126,36 @@ export interface HealthRecord {
   color: string
   time: number
   name: string
+}
+
+export interface BatteryDetails {
+  batteries: Batteries
+  isCharging: number
+  centreCtrlBattery: string
+  batteryDetail: boolean
+  estimatedMileage: number
+}
+
+export interface Batteries {
+  compartmentA: BatteryDetail
+  compartmentB: BatteryDetail
+}
+
+export interface BatteryDetail {
+  items: Item[]
+  totalPoint: number
+  bmsId: string
+  isConnected: boolean
+  batteryCharging: number
+  chargedTimes: string
+  temperature: number
+  temperatureDesc: string
+  energyConsumedTody: number
+  gradeBattery: string
+}
+
+export interface Item {
+  x: number
+  y: number
+  z: number
 }
