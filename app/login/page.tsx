@@ -1,6 +1,11 @@
 import NiuLogo from '@/app/ui/niu-logo';
 import LoginForm from '@/app/ui/login-form';
- 
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+	title: 'Login to your account'
+};
+
 export default function LoginPage() {
   return (
     <main className="flex items-center justify-center md:h-screen">

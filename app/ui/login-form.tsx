@@ -10,6 +10,7 @@ import { ArrowRightIcon } from '@heroicons/react/20/solid';
 import { Button } from './button';
 import { useFormState, useFormStatus } from 'react-dom';
 import { authenticate } from '@/app/lib/actions';
+import Link from 'next/link';
 
 export default function LoginForm() {
 	const [errorMessage, dispatch] = useFormState(authenticate, undefined);
@@ -59,7 +60,9 @@ export default function LoginForm() {
 							<KeyIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
 						</div>
 					</div>
-					<span className='text-xs text-gray-400'>Credentials to your niu profile won&apos;t be saved on the server</span>
+					<span className='text-xs text-gray-700'>By logging in, you agree to the <Link className='text-niu-red' href="/terms-of-service">terms of service</Link></span> 
+					<br />
+					<span className='text-xs text-gray-400'>Credentials to your niu profile won&apos;t be saved on the server</span> 
 				</div>
 				<LoginButton />
 				<div
