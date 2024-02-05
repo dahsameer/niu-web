@@ -30,6 +30,12 @@ export default function Page() {
 					>
 						<span>Log in</span> <ArrowRightIcon className="w-5 md:w-6" />
 					</Link>
+					<div>
+						Find us on <Link href="https://github.com/dahsameer/niu-web" className='text-niu-red'>Github</Link>
+					</div>
+					<div>
+						Join discussion on <Link href="https://discord.gg/jBKJaEY68M" className='text-niu-red'>Discord</Link>
+					</div>
 				</div>
 				<div className="flex items-center justify-center p-6 md:w-3/5 md:px-28 md:py-12">
 					{/* Add Hero Images Here */}
